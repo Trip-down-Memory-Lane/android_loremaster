@@ -46,25 +46,26 @@ public class QuestionFragment extends Fragment {
                 QuestionFragment.QUESTION);
         populateInflatableLayout(questionEntity);
 
+        rootView.setTag(questionEntity.getID()); //??
         return rootView;
     }
 
     private void populateInflatableLayout(Question question) {
         this.header.setImageResource(selectImage(question.QUESTION_SUBJECT));
         this.questionBody.setText(question.QUESTION_BODY);
-        this.answerFirst.setText(question.ANSWER_01);
-        this.answerSecond.setText(question.ANSWER_02);
-        this.answerThird.setText(question.ANSWER_03);
-        this.answerFourth.setText(question.ANSWER_04);
+        this.answerFirst.setText(question.ANSWER_0);
+        this.answerSecond.setText(question.ANSWER_1);
+        this.answerThird.setText(question.ANSWER_2);
+        this.answerFourth.setText(question.ANSWER_3);
     }
 
     private void initChildViews(View rootView) {
         this.header = (ImageView) rootView.findViewById(R.id.quiz_header_imgv);
         this.questionBody = (TextView) rootView.findViewById(R.id.quiz_question_tv);
-        this.answerFirst = (Button) rootView.findViewById(R.id.quiz_answer_1_btn);
-        this.answerSecond = (Button) rootView.findViewById(R.id.quiz_answer_2_btn);
-        this.answerThird = (Button) rootView.findViewById(R.id.quiz_answer_3_btn);
-        this.answerFourth = (Button) rootView.findViewById(R.id.quiz_answer_4_btn);
+        this.answerFirst = (Button) rootView.findViewById(R.id.quiz_answer_0_btn);
+        this.answerSecond = (Button) rootView.findViewById(R.id.quiz_answer_1_btn);
+        this.answerThird = (Button) rootView.findViewById(R.id.quiz_answer_2_btn);
+        this.answerFourth = (Button) rootView.findViewById(R.id.quiz_answer_3_btn);
     }
 
     private int selectImage(String questionSubject) {

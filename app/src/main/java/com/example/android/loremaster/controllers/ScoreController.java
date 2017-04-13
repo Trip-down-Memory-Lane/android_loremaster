@@ -3,33 +3,32 @@ package com.example.android.loremaster.controllers;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
-import android.view.LayoutInflater;
+import android.content.Intent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.android.loremaster.MainActivity;
+import com.example.android.loremaster.QuizActivity;
 import com.example.android.loremaster.R;
 import com.example.android.loremaster.entity.Question;
-import com.example.android.loremaster.repository.QuestionsRepository;
+import com.example.android.loremaster.utilities.Repository;
+import com.example.android.loremaster.utilities.ScoreButton;
 
 import java.util.List;
 import java.util.Locale;
 
 public class ScoreController {
 
-    public ScoreController(Context context, QuestionsRepository repository) {
-        double score = calculateScore(repository);
+    public ScoreController(Context context) {
+        double score = calculateScore();
         printScore(score);
-        inflateButtons(context, repository);
+        inflateButtons(context);
     }
 
-    private double calculateScore(QuestionsRepository repository) {
+    private double calculateScore() {
         double correctAnswers = 0;
         double amountOfQuestions = 0;
-        List<Question> questions = repository.getQuestions();
+        List<Question> questions = Repository.getQuestions();
         for (Question question : questions) {
             amountOfQuestions++;
             if (question.isAnswered()) {
@@ -45,38 +44,39 @@ public class ScoreController {
         // print score
     }
 
-    private void inflateButtons(Context context, QuestionsRepository repository) {
+    private void inflateButtons(Context context) {
         LinearLayout activityRoot = (LinearLayout) ((Activity) context).findViewById(R.id.activity_score_root);
 
-        List<Question> questions = repository.getQuestions();
+        List<Question> questions = Repository.getQuestions();
+        float pixelDensity = context.getResources().getDisplayMetrics().density;
         for (Question question: questions) {
-            boolean isAnswered = question.isAnswered();
-            String subject = question.QUESTION_SUBJECT;
-
-            Button button = new Button(context);
-            button.setText(subject);
-            LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-//            params.width = LayoutParams.MATCH_PARENT;
-//            params.height = LayoutParams.WRAP_CONTENT;
-            button.setLayoutParams(params);
-
-            setMargins(button, 16, 16, 16, 0);
-
-            if (isAnswered) {
-                button.setBackgroundColor(Color.GREEN);
-            } else {
-                button.setBackgroundColor(Color.RED);
-            }
-
+            ScoreButton button = initButton(context, question, pixelDensity);
             activityRoot.addView(button);
         }
     }
 
-    private void setMargins (View view, int left, int top, int right, int bottom) {
-        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            p.setMargins(left, top, right, bottom);
-            view.requestLayout();
-        }
+    private ScoreButton initButton(final Context context, Question question, float pixelDensity) {
+        String subject = question.QUESTION_SUBJECT;
+        int tag = question.getID();
+
+        ScoreButton button =  new ScoreButton(context);
+        button.setText(subject);
+        button.setTag(tag);
+        button.setMargins(16, 16, 16, 0, pixelDensity);
+        button.style(question.isAnswered());
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int questionId = (int) v.getTag();
+
+                Intent questionActivity = new Intent(context, QuizActivity.class);
+                questionActivity.putExtra(MainActivity.INTENT_KEY_START_INDEX, questionId);
+                context.startActivity(questionActivity);
+            }
+        });
+
+        return button;
     }
 }

@@ -21,8 +21,7 @@
         <item name="android:layout_width">162dp</item>
         <item name="android:layout_margin">4dp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:onClick">selectAnswer</item>
     </style>
-
-    <attr name="score_button_to_question_link_id" format="integer"></attr>
 
 </resources>

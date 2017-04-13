@@ -43,11 +43,11 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/quiz_answer_1_btn"
+                    android:id="@+id/quiz_answer_0_btn"
                     android:text="@string/_sample_answer_1"
                     style="@style/AnswerButton" />
                 <Button
-                    android:id="@+id/quiz_answer_2_btn"
+                    android:id="@+id/quiz_answer_1_btn"
                     android:text="@string/_sample_answer_2"
                     style="@style/AnswerButton" />
 
@@ -60,12 +60,13 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/quiz_answer_3_btn"
+                    android:id="@+id/quiz_answer_2_btn"
                     android:text="@string/_sample_answer_3"
                     style="@style/AnswerButton" />
                 <Button
-                    android:id="@+id/quiz_answer_4_btn"
+                    android:id="@+id/quiz_answer_3_btn"
                     android:text="@string/_sample_answer_4"
+                    android:onClick="selectAnswer"
                     style="@style/AnswerButton" />
 
             </LinearLayout>

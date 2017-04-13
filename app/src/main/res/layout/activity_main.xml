@@ -13,7 +13,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/alliance2_30jpg_img"
         android:contentDescription="@string/home_background_alt" />
-
     <Button
         android:id="@+id/home_start_btn"
         android:text="@string/home_start_quiz_btn"
