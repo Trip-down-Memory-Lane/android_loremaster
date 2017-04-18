@@ -3,12 +3,19 @@ package com.example.android.loremaster.entity;
 import java.io.Serializable;
 
 /**
- * Question entity. Holds information on:
- *  Image header,
+ * Question Model entity. Holds static information on:
+ *  Question subject
  *  Question body,
- *  Answers
+ *  Possible answers (4),
+ *  Correct answer index (0, 1, 2 or 3)
+ *
+ *  And dynamic on:
+ *  Correct answer ButtonID - supplied by the controller when template inflation happens.
+ *  User-selected ButtonID
  */
 public class Question implements Serializable {
+
+    public static final int INVALID_ID = 404;
 
     public final int ID;
     public final String QUESTION_SUBJECT;
@@ -17,14 +24,12 @@ public class Question implements Serializable {
     public final String ANSWER_1;
     public final String ANSWER_2;
     public final String ANSWER_3;
+    private final int correctAnswerIndex;
 
-    private boolean answered;
-    private int correctAnswerIndex;
     private int correctAnswerButtonId;
     private int selectedAnswerButtonId;
 
     /**
-     *
      * @param id Id of the question, min id is 0
      * @param correctAnswerIndex Index for the correct answer
      * @param questionSubject Subject
@@ -53,57 +58,39 @@ public class Question implements Serializable {
         this.ANSWER_3 = answerFourth;
 
         this.correctAnswerIndex = correctAnswerIndex;
-        this.selectedAnswerButtonId = 404;
-        this.answered = false;
+        this.selectedAnswerButtonId = INVALID_ID;
+    }
+
+    public int getSelectedAnswerButtonId() {
+        return selectedAnswerButtonId;
     }
 
     public int getID() {
         return ID;
     }
 
-    public void selectAnswer(int answerIndex) {
-        this.selectedAnswerButtonId = answerIndex;
-        this.answered = true;
-    }
-
-    public void unSelectAnswer() {
-        this.selectedAnswerButtonId = 404;
-        this.answered = false;
+    public void selectAnswer(int buttonId) {
+        this.selectedAnswerButtonId = buttonId;
     }
 
     public int getCorrectAnswerIndex() {
         return this.correctAnswerIndex;
     }
 
-    public void setCorrectAnswerButtonId(int index) {
-        this.correctAnswerButtonId = index;
+    public void setCorrectAnswerButtonId(int buttonId) {
+        this.correctAnswerButtonId = buttonId;
     }
 
-    public int correctAnswerButtonId(int index) {
+    public int getCorrectAnswerButtonId() {
         return this.correctAnswerButtonId;
     }
 
-    public boolean isAnswered() {
-        return answered;
+    public boolean isAnsweredCorrectly() {
+        return this.correctAnswerButtonId == this.selectedAnswerButtonId;
     }
 
-    public String getQUESTION_BODY() {
-        return QUESTION_BODY;
-    }
-
-    public String getANSWER_0() {
-        return ANSWER_0;
-    }
-
-    public String getANSWER_1() {
-        return ANSWER_1;
-    }
-
-    public String getANSWER_2() {
-        return ANSWER_2;
-    }
-
-    public String getANSWER_3() {
-        return ANSWER_3;
+    public void reset() {
+        this.selectedAnswerButtonId = INVALID_ID;
+        this.correctAnswerButtonId = INVALID_ID;
     }
 }

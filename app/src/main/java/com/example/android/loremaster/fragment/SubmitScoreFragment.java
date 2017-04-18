@@ -8,8 +8,12 @@ import android.view.ViewGroup;
 
 import com.example.android.loremaster.R;
 
+/**
+ * Used as a transition View to submit the score and redirect to ScoreActivity
+ */
 public class SubmitScoreFragment extends Fragment {
 
+    @Override
     public View onCreateView(
             LayoutInflater inflater,
             ViewGroup activityRoot,

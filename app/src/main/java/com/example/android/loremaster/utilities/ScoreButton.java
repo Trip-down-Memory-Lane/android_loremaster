@@ -5,15 +5,17 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-
+/**
+ * Helper class, extending Button. Defines helper methods for the ScoreActivity's buttons
+ */
 public class ScoreButton extends android.support.v7.widget.AppCompatButton {
 
     private static final int HEIGHT = 60;
 
+    // Constructor overrides
     public ScoreButton(Context context) {
         super(context);
     }
@@ -26,6 +28,11 @@ public class ScoreButton extends android.support.v7.widget.AppCompatButton {
         super(context, attrs, defStyleAttr);
     }
 
+    /**
+     * Sets Button background color according to input param
+     *
+     * @param questionIsAnswered true if used answered the question correctly
+     */
     public void style(boolean questionIsAnswered) {
         Drawable drawable =  this.getBackground();
         int colorId;
@@ -39,7 +46,15 @@ public class ScoreButton extends android.support.v7.widget.AppCompatButton {
                 PorterDuffColorFilter(colorId, PorterDuff.Mode.MULTIPLY));
     }
 
-    //helper to set margins
+    /**
+     * Helper function to set density-independent margins.
+     *
+     * @param left in pixels
+     * @param top in pixels
+     * @param right in pixels
+     * @param bottom in pixels
+     * @param pixelDensity device's pixel density
+     */
     public void setMargins(int left, int top, int right, int bottom, float pixelDensity) {
         left = (int)( (float) left * pixelDensity);
         right = (int) ((float) right * pixelDensity);

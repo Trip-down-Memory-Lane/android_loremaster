@@ -1,6 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_question_template"
+    android:id="@+id/layout_question_template_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -44,10 +44,10 @@
 
                 <Button
                     android:id="@+id/quiz_answer_0_btn"
-                    android:text="@string/_sample_answer_1"
+                    android:text="@string/_sample_answer_0"
                     style="@style/AnswerButton" />
                 <Button
-                    android:id="@+id/quiz_answer_1_btn"
+                    android:id="@+id/quiz_answer_2_btn"
                     android:text="@string/_sample_answer_2"
                     style="@style/AnswerButton" />
 
@@ -60,13 +60,13 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/quiz_answer_2_btn"
-                    android:text="@string/_sample_answer_3"
+                    android:id="@+id/quiz_answer_1_btn"
+                    android:text="@string/_sample_answer_1"
                     style="@style/AnswerButton" />
                 <Button
                     android:id="@+id/quiz_answer_3_btn"
-                    android:text="@string/_sample_answer_4"
-                    android:onClick="selectAnswer"
+                    android:text="@string/_sample_answer_3"
+                    android:onClick="selectAnswerButton"
                     style="@style/AnswerButton" />
 
             </LinearLayout>

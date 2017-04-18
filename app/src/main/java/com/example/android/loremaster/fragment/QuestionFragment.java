@@ -1,5 +1,8 @@
 package com.example.android.loremaster.fragment;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,63 +12,113 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android.loremaster.QuizActivity;
 import com.example.android.loremaster.R;
 import com.example.android.loremaster.entity.Question;
 
 /**
- * The only app Fragment. Controlled by ViewPager
+ * Question Fragment. Every question view is instance of this class. Controller by ViewPager
  *
  * Inflates <layout_question_template.xml>
  */
 public class QuestionFragment extends Fragment {
 
-    private ImageView header;
-    private TextView questionBody;
-    private Button answerFirst;
-    private Button answerSecond;
-    private Button answerThird;
-    private Button answerFourth;
+    public static final String KEY_QUESTION_DATA = "QUESTION_DATA";
+    public static final String KEY_QUIZ_MODE = "KEY_QUIZ_MODE";
 
-    public static final String ARG_ID = "question_id";
-    public static final String QUESTION = "question";
+    private View rootView;
+    private Question question;
 
+    private ImageView header_Iv;
+    private TextView questionBody_Tv;
+    private Button answer_0_Btn;
+    private Button answer_1_Btn;
+    private Button answer_2_Btn;
+    private Button answer_3_Btn;
+
+    @Override
     public View onCreateView(
             LayoutInflater inflater,
             ViewGroup container,
             Bundle questionData) {
 
-        View rootView = inflater.inflate(
+        this.rootView = inflater.inflate(
                 R.layout.layout_question_template,
                 container,
                 false);
 
-        initChildViews(rootView);
-
         Bundle args = getArguments();
-        Question questionEntity = (Question) args.getSerializable(
-                QuestionFragment.QUESTION);
-        populateInflatableLayout(questionEntity);
+        this.question = (Question) args.getSerializable(QuestionFragment.KEY_QUESTION_DATA);
+        boolean isQuizSubmitted = args.getBoolean(KEY_QUIZ_MODE, QuizActivity.QUIZ_NOT_SUBMITTED);
+        this.initViews();
+        this.populateInflatable(isQuizSubmitted);
 
-        rootView.setTag(questionEntity.getID()); //??
+        rootView.findViewById(R.id.layout_question_template_root).setTag(this.question.getID());
         return rootView;
     }
 
-    private void populateInflatableLayout(Question question) {
-        this.header.setImageResource(selectImage(question.QUESTION_SUBJECT));
-        this.questionBody.setText(question.QUESTION_BODY);
-        this.answerFirst.setText(question.ANSWER_0);
-        this.answerSecond.setText(question.ANSWER_1);
-        this.answerThird.setText(question.ANSWER_2);
-        this.answerFourth.setText(question.ANSWER_3);
+    /**
+     * Populates the inflated template with question data. Colors the background
+     * of selected Button, if any.
+     */
+    private void populateInflatable(boolean isQuizSubmitted) {
+        this.header_Iv.setImageResource(selectImage(question.QUESTION_SUBJECT));
+        this.questionBody_Tv.setText(question.QUESTION_BODY);
+        this.answer_0_Btn.setText(question.ANSWER_0);
+        this.answer_1_Btn.setText(question.ANSWER_1);
+        this.answer_2_Btn.setText(question.ANSWER_2);
+        this.answer_3_Btn.setText(question.ANSWER_3);
+
+        showAnswers(isQuizSubmitted);
     }
 
-    private void initChildViews(View rootView) {
-        this.header = (ImageView) rootView.findViewById(R.id.quiz_header_imgv);
-        this.questionBody = (TextView) rootView.findViewById(R.id.quiz_question_tv);
-        this.answerFirst = (Button) rootView.findViewById(R.id.quiz_answer_0_btn);
-        this.answerSecond = (Button) rootView.findViewById(R.id.quiz_answer_1_btn);
-        this.answerThird = (Button) rootView.findViewById(R.id.quiz_answer_2_btn);
-        this.answerFourth = (Button) rootView.findViewById(R.id.quiz_answer_3_btn);
+    /**
+     * Keeps the UI Views as private fields. This is required, because we need to change
+     * the buttons according to user interaction.
+     */
+    private void initViews() {
+        this.header_Iv = (ImageView) this.rootView.findViewById(R.id.quiz_header_imgv);
+        this.questionBody_Tv = (TextView) this.rootView.findViewById(R.id.quiz_question_tv);
+        this.answer_0_Btn = (Button) this.rootView.findViewById(R.id.quiz_answer_0_btn);
+        this.answer_1_Btn = (Button) this.rootView.findViewById(R.id.quiz_answer_1_btn);
+        this.answer_2_Btn = (Button) this.rootView.findViewById(R.id.quiz_answer_2_btn);
+        this.answer_3_Btn = (Button) this.rootView.findViewById(R.id.quiz_answer_3_btn);
+    }
+
+    /**
+     * Calls changeButtonColor for the corresponding buttons:
+     * -- If user has selected answer - mark it in BLUE
+     * -- If user has submitted the quiz - mark the correct answer as GREEN.
+     * ---- If user has selected wrong answer - mark it as RED.
+     */
+    private void showAnswers(boolean isQuizSubmitted) {
+        int selectedAnswerButtonId = this.question.getSelectedAnswerButtonId();
+        boolean isAnswerSelected = selectedAnswerButtonId != Question.INVALID_ID;
+
+        if (isQuizSubmitted) {
+            int correctAnswerButtonId = this.question.getCorrectAnswerButtonId();
+            if (isAnswerSelected) {
+                changeButtonColor(selectedAnswerButtonId, Color.RED);
+            }
+            changeButtonColor(correctAnswerButtonId, Color.GREEN);
+        } else {
+            if (isAnswerSelected) {
+                changeButtonColor(selectedAnswerButtonId, Color.BLUE);
+            }
+        }
+    }
+
+    /**
+     * Changes button background color
+     *
+     * @param buttonId Id of button
+     * @param colorId Id of color ( example: Color.RED )
+     */
+    private void changeButtonColor(int buttonId, int colorId) {
+        this.rootView.findViewById(buttonId)
+                .getBackground()
+                .setColorFilter(
+                        new PorterDuffColorFilter(colorId, PorterDuff.Mode.MULTIPLY));
     }
 
     private int selectImage(String questionSubject) {
@@ -74,6 +127,30 @@ public class QuestionFragment extends Fragment {
             case "alliance": return R.drawable.alliance2_30jpg_img;
             default: return R.drawable.alliance_img;
         }
+    }
+
+    /**
+     * @return Question entity's ID
+     */
+    public int getQuestionId() {
+        return this.question.getID();
+    }
+
+    // Getters
+    public Button getAnswer_0_Btn() {
+        return answer_0_Btn;
+    }
+
+    public Button getAnswer_1_Btn() {
+        return answer_1_Btn;
+    }
+
+    public Button getAnswer_2_Btn() {
+        return answer_2_Btn;
+    }
+
+    public Button getAnswer_3_Btn() {
+        return answer_3_Btn;
     }
 }
 

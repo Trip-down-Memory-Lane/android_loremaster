@@ -4,10 +4,10 @@
     <string name="home_start_quiz_btn">start quiz</string>
     <string name="home_background_alt">For the Alliance</string>
     <string name="__sample_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae diam iaculis, facilisis augue quis, faucibus libero. Maecenas non lacinia nulla, nec sa di metus.</string>
-    <string name="_sample_answer_1">Answer 1</string>
-    <string name="_sample_answer_2">answer 2</string>
-    <string name="_sample_answer_3">answer 3</string>
-    <string name="_sample_answer_4">answer 4</string>
+    <string name="_sample_answer_0">Answer 1</string>
+    <string name="_sample_answer_1">answer 2</string>
+    <string name="_sample_answer_2">answer 3</string>
+    <string name="_sample_answer_3">answer 4</string>
 
 
     <string name="question_1_subject">horde</string>
@@ -30,4 +30,5 @@
     <string name="question_3_answer_02">gogi 2</string>
     <string name="question_3_answer_03">answer 3</string>
     <string name="question_3_answer_04">coco 4</string>
+    <string name="toolbar_view_score">score</string>
 </resources>

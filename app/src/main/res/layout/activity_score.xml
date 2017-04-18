@@ -1,23 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_score_root"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context="com.example.android.loremaster.MainActivity">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.android.loremaster.ScoreActivity">
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:weightSum="1">
 
-    <Button
-        android:text="TEST SUBJECT"
-        android:onClick="navigateToQuestion"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1.53"
+        android:paddingTop="8dp">
 
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="bottom"
+            android:onClick="viewQuiz"
+            android:background="@drawable/back_arrow_white" />
+        <TextView
+            android:id="@+id/toolbar_app_title_tv"
+            style="@style/ApplicationTitle"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:id="@+id/activity_score_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.android.loremaster.ScoreActivity">
+
+        <TextView
+            android:id="@+id/activity_score_result_score_tv"
+            android:textColor="@android:color/black"
+            android:text="47%"
+            android:textScaleX="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
+
