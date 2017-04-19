@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.android.loremaster.controllers.QuizController;
 import com.example.android.loremaster.entity.Question;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Called on Button press at activity_main.xml
+     * Called on Button press at <activity_main.xml>
      *
      * @param v Button view, which was presses
      */
@@ -36,6 +37,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuizActivity.class);
 
         startActivity(intent);
+    }
+
+    /**
+     * Called on Button press at <activity_main.xml>. Shows or hides the rules container
+     * based on current state - if VISIBLE -> set to GONE;
+     *
+     * @param v Button view
+     */
+    public void showHideRules(View v) {
+        View rulesContainer =  findViewById(R.id.home_rules_container_rl);
+        int buttonTextId;
+        int containerVisibilityId;
+        if (rulesContainer.getVisibility() == View.GONE) {
+            containerVisibilityId = View.VISIBLE;
+            buttonTextId = R.string.home_hide_rules_btn;
+        } else {
+            containerVisibilityId = View.GONE;
+            buttonTextId = R.string.home_show_rules_btn;
+        }
+
+        rulesContainer.setVisibility(containerVisibilityId);
+        ((Button) findViewById(R.id.home_show_rules_btn)).setText(buttonTextId);
     }
 
     /**
