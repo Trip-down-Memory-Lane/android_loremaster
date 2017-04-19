@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <LinearLayout
+            android:baselineAligned="false"
             android:id="@+id/quiz_answer_table_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
