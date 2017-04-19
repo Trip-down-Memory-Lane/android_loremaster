@@ -1,4 +1,4 @@
-package com.example.android.loremaster.fragment;
+package com.example.android.trial_of_knowledge.fragment;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.android.loremaster.QuizActivity;
-import com.example.android.loremaster.R;
-import com.example.android.loremaster.entity.Question;
+import com.example.android.trial_of_knowledge.QuizActivity;
+import com.example.android.trial_of_knowledge.R;
+import com.example.android.trial_of_knowledge.entity.Question;
 
 /**
  * Question Fragment. Every question view is instance of this class. Controller by ViewPager

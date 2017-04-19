@@ -1,12 +1,11 @@
-package com.example.android.loremaster;
+package com.example.android.trial_of_knowledge;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.android.loremaster.controllers.ScoreController;
-import com.example.android.loremaster.utilities.Repository;
+import com.example.android.trial_of_knowledge.controllers.ScoreController;
 
 /**
  * Score screen of the app.

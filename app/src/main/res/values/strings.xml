@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Loremaster</string>
+    <string name="app_name">Trial of Knowledge </string>
     <string name="title_activity_score">ScoreActivity</string>
     <string name="home_start_quiz_btn">begin</string>
     <string name="home_show_rules_btn">rules</string>
@@ -37,4 +37,5 @@
     <string name="home_quiz_rules">Rules</string>
     <string name="home_hide_rules_btn">Hide</string>
     <string name="home_rules_sub_heading">Your worth is measured in Truth!</string>
+    <string name="score_header_background_image_alt">Background, stars, titans</string>
 </resources>

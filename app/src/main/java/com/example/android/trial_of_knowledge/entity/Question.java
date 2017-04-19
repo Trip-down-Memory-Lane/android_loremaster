@@ -1,4 +1,4 @@
-package com.example.android.loremaster.entity;
+package com.example.android.trial_of_knowledge.entity;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.example.android.loremaster.controllers;
+package com.example.android.trial_of_knowledge.controllers;
 
 
 import android.app.Activity;
@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.android.loremaster.MainActivity;
-import com.example.android.loremaster.QuizActivity;
-import com.example.android.loremaster.R;
-import com.example.android.loremaster.entity.Question;
-import com.example.android.loremaster.utilities.Repository;
-import com.example.android.loremaster.utilities.ScoreButton;
+import com.example.android.trial_of_knowledge.MainActivity;
+import com.example.android.trial_of_knowledge.QuizActivity;
+import com.example.android.trial_of_knowledge.R;
+import com.example.android.trial_of_knowledge.entity.Question;
+import com.example.android.trial_of_knowledge.utilities.Repository;
+import com.example.android.trial_of_knowledge.utilities.ScoreButton;
 
 import java.util.List;
 import java.util.Locale;

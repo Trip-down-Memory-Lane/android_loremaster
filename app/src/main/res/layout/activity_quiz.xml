@@ -56,7 +56,7 @@ android:orientation="vertical">
         android:id="@+id/quiz_view_pager_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.android.loremaster.QuizActivity">
+        tools:context="com.example.android.trial_of_knowledge.QuizActivity">
 
 
     </android.support.v4.view.ViewPager>

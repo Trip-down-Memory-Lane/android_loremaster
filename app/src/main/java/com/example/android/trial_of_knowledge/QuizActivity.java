@@ -1,4 +1,4 @@
-package com.example.android.loremaster;
+package com.example.android.trial_of_knowledge;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,14 +8,12 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.android.loremaster.controllers.QuizController;
-import com.example.android.loremaster.fragment.QuestionFragment;
-import com.example.android.loremaster.utilities.Repository;
+import com.example.android.trial_of_knowledge.controllers.QuizController;
+import com.example.android.trial_of_knowledge.fragment.QuestionFragment;
+import com.example.android.trial_of_knowledge.utilities.Repository;
 
 public class QuizActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.android.loremaster.controllers;
+package com.example.android.trial_of_knowledge.controllers;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,11 +8,11 @@ import android.support.v4.util.ArrayMap;
 import android.util.Log;
 import android.view.ViewGroup;
 
-import com.example.android.loremaster.R;
-import com.example.android.loremaster.entity.Question;
-import com.example.android.loremaster.fragment.QuestionFragment;
-import com.example.android.loremaster.fragment.SubmitScoreFragment;
-import com.example.android.loremaster.utilities.Repository;
+import com.example.android.trial_of_knowledge.R;
+import com.example.android.trial_of_knowledge.entity.Question;
+import com.example.android.trial_of_knowledge.fragment.QuestionFragment;
+import com.example.android.trial_of_knowledge.fragment.SubmitScoreFragment;
+import com.example.android.trial_of_knowledge.utilities.Repository;
 
 import java.util.Map;
 

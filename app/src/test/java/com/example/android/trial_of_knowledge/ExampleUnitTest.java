@@ -1,4 +1,4 @@
-package com.example.android.loremaster;
+package com.example.android.trial_of_knowledge;
 
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.loremaster">
+    package="com.example.android.trial_of_knowledge">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.android.trial_of_knowledge.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,19 +18,19 @@
         </activity>
         <!--<activity android:name=".QuizActivity" />-->
         <!--<activity android:name=".ScoreActivity" />-->
-        <activity android:name=".QuizActivity"
-            android:parentActivityName=".MainActivity" >
+        <activity android:name="com.example.android.trial_of_knowledge.QuizActivity"
+            android:parentActivityName="com.example.android.trial_of_knowledge.MainActivity" >
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.example.android.trial_of_knowledge.MainActivity" />
         </activity>
-        <activity android:name=".ScoreActivity"
-            android:parentActivityName=".QuizActivity" >
+        <activity android:name="com.example.android.trial_of_knowledge.ScoreActivity"
+            android:parentActivityName="com.example.android.trial_of_knowledge.QuizActivity" >
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.example.android.trial_of_knowledge.MainActivity" />
         </activity>
 
     </application>

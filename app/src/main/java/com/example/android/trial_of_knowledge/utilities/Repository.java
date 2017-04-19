@@ -1,6 +1,6 @@
-package com.example.android.loremaster.utilities;
+package com.example.android.trial_of_knowledge.utilities;
 
-import com.example.android.loremaster.entity.Question;
+import com.example.android.trial_of_knowledge.entity.Question;
 
 import java.io.Serializable;
 import java.util.Arrays;

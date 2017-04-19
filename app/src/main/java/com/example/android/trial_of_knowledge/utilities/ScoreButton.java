@@ -1,4 +1,4 @@
-package com.example.android.loremaster.utilities;
+package com.example.android.trial_of_knowledge.utilities;
 
 import android.content.Context;
 import android.graphics.Color;

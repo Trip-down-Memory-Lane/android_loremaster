@@ -1,4 +1,4 @@
-package com.example.android.loremaster;
+package com.example.android.trial_of_knowledge;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.android.loremaster.controllers.QuizController;
-import com.example.android.loremaster.entity.Question;
-import com.example.android.loremaster.utilities.Repository;
+import com.example.android.trial_of_knowledge.controllers.QuizController;
+import com.example.android.trial_of_knowledge.entity.Question;
+import com.example.android.trial_of_knowledge.utilities.Repository;
 
 import java.util.List;
 
