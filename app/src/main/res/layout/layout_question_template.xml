@@ -15,16 +15,22 @@
         android:contentDescription="ALT TEXT" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:orientation="vertical"
         android:layout_weight="1"
         android:padding="16dp">
 
         <TextView
+            android:text="Horde"
+            style="@style/ApplicationSubHeading"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+        <TextView
             android:id="@+id/quiz_question_tv"
             android:text="@string/__sample_text"
             android:textSize="16sp"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <LinearLayout
@@ -32,13 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
+            android:padding="4dp"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginRight="2dp"
+                android:layout_marginEnd="2dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -55,6 +63,8 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
