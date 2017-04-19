@@ -25,8 +25,8 @@ tools:context="com.example.android.loremaster.MainActivity">
         android:paddingTop="8dp">
 
         <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
             android:gravity="bottom"
