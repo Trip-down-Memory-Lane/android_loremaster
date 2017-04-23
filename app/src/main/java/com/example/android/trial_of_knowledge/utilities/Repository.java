@@ -12,31 +12,31 @@ import java.util.List;
 public class Repository implements Serializable {
 
     private static final int QUESTION_1_ID = 0;
-    private static final int QUESTION_1_CORRECT_ANSWER = 0;
+    private static final int QUESTION_1_CORRECT_ANSWER = 1;
     private static final String QUESTION_1_SUBJECT = "alliance";
-    private static final String QUESTION_1_QUESTION_BODY = "First question";
-    private static final String QUESTION_1_ANSWER_0 = "answer 1";
-    private static final String QUESTION_1_ANSWER_1 = "answer 2";
-    private static final String QUESTION_1_ANSWER_2 = "answer 3";
-    private static final String QUESTION_1_ANSWER_3 = "answer 4";
+    private static final String QUESTION_1_QUESTION_BODY = "Which of the following kingdoms has not pledged allegiance to the Alliance";
+    private static final String QUESTION_1_ANSWER_0 = "Kingdom of Quel'Thalas";
+    private static final String QUESTION_1_ANSWER_1 = "Darnassus";
+    private static final String QUESTION_1_ANSWER_2 = "Kingdom of Gilneas";
+    private static final String QUESTION_1_ANSWER_3 = "Gnomeregan";
 
     private static final int QUESTION_2_ID = 1;
-    private static final int QUESTION_2_CORRECT_ANSWER = 0;
-    private static final String QUESTION_2_SUBJECT = "horde";
-    private static final String QUESTION_2_QUESTION_BODY = "Second Question";
-    private static final String QUESTION_2_ANSWER_01 = "penka 1";
-    private static final String QUESTION_2_ANSWER_02 = "penka 2";
-    private static final String QUESTION_2_ANSWER_03 = "penka 3";
-    private static final String QUESTION_2_ANSWER_04 = "penka 4";
+    private static final int QUESTION_2_CORRECT_ANSWER = 2;
+    private static final String QUESTION_2_SUBJECT = "arthas";
+    private static final String QUESTION_2_QUESTION_BODY = "Who said “Give my regards to the endless dark” to Arthas?";
+    private static final String QUESTION_2_ANSWER_01 = "Jaina Proudmoore";
+    private static final String QUESTION_2_ANSWER_02 = "Valeera Sanguinar";
+    private static final String QUESTION_2_ANSWER_03 = "Sylvanas Windrunner";
+    private static final String QUESTION_2_ANSWER_04 = "Uther the Lightbringer";
 
     private static final int QUESTION_3_ID = 2;
-    private static final int QUESTION_3_CORRECT_ANSWER = 0;
-    private static final String QUESTION_3_SUBJECT = "horde";
-    private static final String QUESTION_3_QUESTION_BODY = "Third Question?";
-    private static final String QUESTION_3_ANSWER_01 = "answer 1";
-    private static final String QUESTION_3_ANSWER_02 = "ogi 2";
-    private static final String QUESTION_3_ANSWER_03 = "naswer 3";
-    private static final String QUESTION_3_ANSWER_04 = "coco 4";
+    private static final int QUESTION_3_CORRECT_ANSWER = 2;
+    private static final String QUESTION_3_SUBJECT = "demon_soul";
+    private static final String QUESTION_3_QUESTION_BODY = "Who was the character depicted on the picture, before he became known as Deathwing, The Destroyer";
+    private static final String QUESTION_3_ANSWER_01 = "Galakrond";
+    private static final String QUESTION_3_ANSWER_02 = "Deathwing";
+    private static final String QUESTION_3_ANSWER_03 = "Neferian";
+    private static final String QUESTION_3_ANSWER_04 = "Neltharion the Earthwarden";
 
     private static List<Question> questions =
             Arrays.asList(

@@ -123,9 +123,10 @@ public class QuestionFragment extends Fragment {
 
     private int selectImage(String questionSubject) {
         switch (questionSubject) {
-            case "horde": return R.drawable.horde_30_img;
-            case "alliance": return R.drawable.alliance2_30jpg_img;
-            default: return R.drawable.alliance_img;
+            case "alliance": return R.drawable.question_01_header_img;
+            case "arthas": return R.drawable.question_02_header_img;
+            case "demon_soul": return R.drawable.question_03_header_img;
+            default: return R.drawable.main_background_nongannon_img;
         }
     }
 
