@@ -13,23 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        android:weightSum="1">
+        android:weightSum="1"
+        app:contentInsetStart="0dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_weight="1.53"
-            android:paddingTop="8dp">
+            android:layout_height="match_parent">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pattern_space"
+                android:scaleType="centerCrop"
+                android:alpha="0.1"/>
             <TextView
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:id="@+id/toolbar_app_title_tv"
+                android:layout_centerVertical="true"
                 style="@style/ApplicationTitle"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/holo_purple"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
     <RelativeLayout
@@ -41,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/alliance2_30jpg_img"
+            android:src="@drawable/main_background_nongannon_img"
             android:contentDescription="@string/home_background_alt" />
 
         <LinearLayout
@@ -74,7 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="24dp"
                     android:layout_marginEnd="24dp"
-                    android:onClick="startQuiz"/>
+                    android:onClick="startQuiz"
+                    android:background="@android:color/holo_purple"/>
                 <Button
                     android:id="@+id/home_show_rules_btn"
                     android:text="@string/home_quiz_rules"

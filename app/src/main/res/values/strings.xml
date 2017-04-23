@@ -38,4 +38,5 @@
     <string name="home_hide_rules_btn">Hide</string>
     <string name="home_rules_sub_heading">Your worth is measured in Truth!</string>
     <string name="score_header_background_image_alt">Background, stars, titans</string>
+    <string name="quiz_submit_score_algalon_alt">Algalon the Observer</string>
 </resources>
