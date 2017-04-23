@@ -4,6 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/quiz_submit_score_algalon_img"
+        android:contentDescription="@string/quiz_submit_score_algalon_alt"
+        android:scaleType="centerCrop"/>
     <Button
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:text="View Score"
@@ -16,5 +22,4 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:padding="24dp"/>
-
 </RelativeLayout>
