@@ -12,7 +12,7 @@ import java.util.List;
 public class Repository implements Serializable {
 
     private static final int QUESTION_1_ID = 0;
-    private static final int QUESTION_1_CORRECT_ANSWER = 1;
+    private static final int QUESTION_1_CORRECT_ANSWER = 0;
     private static final String QUESTION_1_SUBJECT = "alliance";
     private static final String QUESTION_1_QUESTION_BODY = "Which of the following kingdoms has not pledged allegiance to the Alliance";
     private static final String QUESTION_1_ANSWER_0 = "Kingdom of Quel'Thalas";
@@ -30,7 +30,7 @@ public class Repository implements Serializable {
     private static final String QUESTION_2_ANSWER_04 = "Uther the Lightbringer";
 
     private static final int QUESTION_3_ID = 2;
-    private static final int QUESTION_3_CORRECT_ANSWER = 2;
+    private static final int QUESTION_3_CORRECT_ANSWER = 3;
     private static final String QUESTION_3_SUBJECT = "demon_soul";
     private static final String QUESTION_3_QUESTION_BODY = "Who was the character depicted on the picture, before he became known as Deathwing, The Destroyer";
     private static final String QUESTION_3_ANSWER_01 = "Galakrond";
