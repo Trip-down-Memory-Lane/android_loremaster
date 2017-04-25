@@ -33,10 +33,11 @@
     <string name="question_3_answer_04">coco 4</string>
 
     <string name="toolbar_view_score">score</string>
-    <string name="main_greeting_heading_tv">Welcome adventurer, to Norgannon\'s Trial of Knowledge</string>
+    <string name="main_greeting_heading_tv">Welcome adventurer, to my Trial of Knowledge</string>
     <string name="home_quiz_rules">Rules</string>
     <string name="home_hide_rules_btn">Hide</string>
     <string name="home_rules_sub_heading">Your worth is measured in Truth!</string>
     <string name="score_header_background_image_alt">Background, stars, titans</string>
     <string name="quiz_submit_score_algalon_alt">Algalon the Observer</string>
+    <string name="nongannon">Nongannon</string>
 </resources>
