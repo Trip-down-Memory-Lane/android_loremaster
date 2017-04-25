@@ -14,7 +14,7 @@
     <item android:right="1dp"  android:bottom="1dp">
         <shape
             android:shape="oval">
-            <solid android:color="@color/ui_btn_background"/>
+            <solid android:color="@color/arcane_purple"/>
             <corners android:radius="5dp"/>
         </shape>
     </item>
