@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="ui_element_shadow">#474747</color>
+    <color name="ui_btn_background">@android:color/holo_purple</color>
+    <color name="ui_btn_border">@android:color/holo_orange_dark</color>
 </resources>

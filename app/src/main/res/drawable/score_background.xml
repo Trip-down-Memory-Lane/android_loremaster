@@ -4,7 +4,7 @@
         <shape
             android:shape="oval">
             <solid
-                android:color="#474747" />
+                android:color="@color/ui_element_shadow" />
 
             <size
                 android:width="60dp"
@@ -14,7 +14,7 @@
     <item android:right="1dp"  android:bottom="1dp">
         <shape
             android:shape="oval">
-            <solid android:color="@android:color/white"/>
+            <solid android:color="@color/ui_btn_background"/>
             <corners android:radius="5dp"/>
         </shape>
     </item>
