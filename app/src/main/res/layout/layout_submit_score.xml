@@ -13,6 +13,8 @@
     <Button
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:text="View Score"
+        android:background="@drawable/app_ui_button"
+        android:textColor="@color/colorAccent"
         android:onClick="viewScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
